@@ -1,13 +1,21 @@
+CMPUT 411  Assignment 3
+-----------------------
 
-The following classes have been removed from this code directory---
-you will need to implement these yourself to complete Assignment 3:
-light.h
-texture.h
-animation.h
+Assignment 3 from the CMPUT 411 class at the University of Alberta
 
-Also included is an incomplete mesh.h class, which is the solution to 
-Assignment 1, but requires several extensions to complete Assignment 3.
+Assignment Description:
+In this assignment you will implement an enhanced model viewer then a combined meshmotion
+viewer (in C++/OpenGL). Your programs will first read in a description of a 3D
+mesh model of a person, a 3D skeleton (which has been properly located inside the mesh),
+and a set of attachment weights that connect the mesh to the skeleton.
+I have already solved for the attachment weights using the method explained in class.
+Your first program will simply add solid surfaces, lighting and textures to a mesh model
+of a human figure to make the model appear successively realistic. Your second program will
+then read a motion capture sequence and animate the mesh model using smooth deformation.
 
-The included *Viewer and *Generator programs are provided for completeness
-and enlightenment.  They work as is.
+Consulted:
+- Dale Schuurmans provided code
+- Computer Graphics Through OpenGL, 2nd Edition
+- Mickael Zerihoun
+- Thomas Curnow
 

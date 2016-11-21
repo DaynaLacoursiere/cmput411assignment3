@@ -46,7 +46,6 @@ struct mesh
 	Vector3f translation; // object translation
 	Quaternionf quaternion; // object orientation
 	float color[4];
-	int displayType;
 
 	// display list
 	unsigned int displayList;
@@ -72,7 +71,6 @@ struct mesh
 		numVertices = 0;
 		numTriangles = 0;
 		triangleIndices = NULL;
-		displayType = 0;
 	}
 
 
@@ -83,44 +81,6 @@ struct mesh
 	{
 		translation << 0, 0, 0;
 		quaternion = Quaternionf::Identity();
-	}
-
-	void toggleDisplay()
-	{
-		int i = displayType + 1;
-		if (i == 4)
-			displayType = 0;
-		else
-			displayType = i;
-
-		cout << "changing display to " << displayType << endl;
-		switch(displayType)
-		{
-			case 0:
-			// Wire Frame
-		  glDisable(GL_TEXTURE_2D);
-			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-			break;
-
-			case 1:
-			// Flat shaded
-		  glDisable(GL_TEXTURE_2D);
-			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-			glShadeModel(GL_FLAT);
-			break;
-
-			case 2:
-			// Smooth Shaded
-		  glDisable(GL_TEXTURE_2D);
-			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-			glShadeModel(GL_SMOOTH);
-			break;
-
-			case 3:
-			// Texture mapped
-		  glEnable(GL_TEXTURE_2D);
-			break;
-		}
 	}
 
 

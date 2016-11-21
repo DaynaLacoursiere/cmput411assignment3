@@ -91,7 +91,7 @@ void attachment::distancesVisibility(float* boneRadii)
 	// loop through bones
 	for (unsigned int j = 0; j < skelp->bones.size(); ++j) {
 
-		cout << "computing distances/visibilities to bone " << j+1 << endl;
+		// cout << "computing distances/visibilities to bone " << j+1 << endl;
 
 		unsigned int v0 = skelp->bones[j][0];
 		unsigned int v1 = skelp->bones[j][1];
