@@ -19,3 +19,5 @@ Consulted:
 - Mickael Zerihoun
 - Thomas Curnow
 
+Notes:
+personViewer does some initialization stuff at the start. So if it seems like nothing is happening at first, wait a second. It should print "done computing distances/visibilities", and then the personViewer will appear

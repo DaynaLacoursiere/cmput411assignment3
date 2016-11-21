@@ -85,7 +85,7 @@ void setup(char *meshFile, char *motionFile, char *attachFile)
   BitMapFile *image[1];
    
   // Load the image.
-  image[0] = obj.getbmp("../a3files/mesh/skin.bmp"); 
+  image[0] = obj.getbmp("skin.bmp"); 
   
   text.loadExternalTextures(image[0]);
   text.textEnv();
@@ -115,6 +115,25 @@ void setup(char *meshFile, char *motionFile, char *attachFile)
   // animation
   anim.readAttFile(attachFile);
 
+  // vector< vector< pair< unsigned int, float > > > attachments;
+  // for (size_t i = 0; i < anim.attachments.size(); ++i)
+  // {
+  //   for (size_t j = 0; j < anim.attachments[i].size(); ++j)
+  //   {
+  //     // i + 1 is vertex num
+  //     // anim.attachments[i][j].first is the bone the vertex is attached to
+  //     // anim.attachments[i][j].second is the attachment weight
+  //     // I think skel.bones[anim.attachments[i][j].first - 1] is the bone
+  //     cout << "1: " << i + 1 << endl;
+  //     cout << "2: " << anim.attachments[i][j].first << endl;
+  //     cout << "3: " << anim.attachments[i][j].second << endl;
+  //     cout << "4: " << skel.bones[anim.attachments[i][j].first] << endl;
+  //     break;
+  //   }
+  //   break;
+  // }
+  // exit(1);
+
   // gl
   glClearColor(0.0, 0.0, 0.0, 0.0);
   glEnable(GL_DEPTH_TEST);
@@ -141,8 +160,6 @@ void drawScene(void)
   skel.glColor();
   skel.interpolatePose(&mot, tim.loopFrac, interpolate);
   skel.glDraw();
-
-  
 
   // texture
   text.bindText();

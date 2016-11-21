@@ -70,7 +70,7 @@ void setup(char* fileName)
   BitMapFile *image[1];
    
   // Load the image.
-  image[0] = obj.getbmp("../a3files/mesh/skin.bmp"); 
+  image[0] = obj.getbmp("skin.bmp"); 
 	
 	text.loadExternalTextures(image[0]);
 	text.textEnv();
